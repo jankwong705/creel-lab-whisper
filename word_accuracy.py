@@ -100,7 +100,7 @@ def calculate_wer(results, output_file, mode="default", lookup_file="lookup_file
                     query = file_name[file_name.index('_') + 1:-4] + file_name[8:file_name.index('_')]
                     word = produced[p]
                     if ' ' in word:
-                        word = word[word.rfind(' '):]
+                        word = word[word.rfind(' '):]   # extract last word: remove if want to compare full sentences 
                         expected = lookup_actual(lookup_file, query, type='FinalWord')
                         expect_l.append(expected)
                         wer_s = wer(expected, word)
