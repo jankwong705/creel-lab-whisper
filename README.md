@@ -4,4 +4,7 @@
 
 ### Whisper WER: Code for calculating WER of outputs of Whisper
 
-### Wav2Vec
+### Whisper Code: Code for transcribing audio files using Whisper
+
+### Wav2Vec: Code for transcribing .wav files using Wav2Vec
+
