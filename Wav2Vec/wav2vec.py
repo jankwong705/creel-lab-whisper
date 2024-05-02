@@ -32,9 +32,6 @@ def transcribe(input_folder, output_excel):
     # List audio files in input folder
     audio_files = os.listdir(input_folder)
 
-    # Extract actual word
-    actual = input_folder[0:input_folder.rfind('_')]    ## ADJUST AS NEEDED 
-
     # Create empty datadrame
     df = pd.DataFrame(columns=['File', 'Actual', 'Predicted'])
     files = []
@@ -51,6 +48,8 @@ def transcribe(input_folder, output_excel):
             audio = load_audio(input_audio_file)
             transcription_each = transcribe_each(audio)
             files.append(input_audio_file)
+            # Extract actual word
+            actual = input_audio_file[input_audio_file.rfind('_')+1:input_audio_file.rfind('.')]    # KIDTALK & AP
             actuals.append(actual)
             predicted.append(transcription_each)
 
